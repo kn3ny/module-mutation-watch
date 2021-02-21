@@ -1,10 +1,10 @@
 const UserModule = require("./user");
 
-const ignoreModuleNames = ["Foo", "Bar"];
-const waitUntilEnableHeuristic = 10000;
-
 const ProxiedUserModule = new Proxy(UserModule, {
     construct(target, args) {
+        const ignoreModuleNames = ["Foo", "Bar"];
+        const waitUntilEnableHeuristic = 10000;
+
         const className = target.name;
 
         let heuristicEnable = false;
