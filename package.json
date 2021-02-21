@@ -9,6 +9,8 @@
         "eslint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
     },
     "devDependencies": {
+        "@babel/cli": "^7.12.17",
+        "@babel/core": "^7.12.17",
         "eslint": "^7.20.0",
         "eslint-config-prettier": "^7.2.0",
         "prettier": "^2.2.1"
