@@ -1,13 +1,13 @@
 {
-  "name": "js-proxy",
-  "version": "1.0.0",
-  "main": "src/index.js",
-  "license": "UNLICENSED",
-  "private": true,
-  "scripts": {
-    "prettier:fix": "prettier --write ."
-  },
-  "devDependencies": {
-    "prettier": "^2.2.1"
-  }
+    "name": "js-proxy",
+    "version": "1.0.0",
+    "main": "src/index.js",
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "prettier:fix": "prettier --write ."
+    },
+    "devDependencies": {
+        "prettier": "^2.2.1"
+    }
 }
