@@ -5,9 +5,11 @@
     "license": "UNLICENSED",
     "private": true,
     "scripts": {
-        "prettier:fix": "prettier --write ."
+        "prettier:fix": "prettier --write .",
+        "eslint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
     },
     "devDependencies": {
+        "eslint": "^7.20.0",
         "prettier": "^2.2.1"
     }
 }
