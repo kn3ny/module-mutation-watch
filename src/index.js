@@ -2,24 +2,18 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const Module1 = require("./lib/user");
-const module1 = new Proxy(new Module1(), {
-    set(obj, prop, value) {
-        console.log(`${prop} = ${value}`);
-        return Reflect.set(...arguments);
-    }
-});
+const UserModule = require("./lib/proxiedUser");
+const module1 = new UserModule();
 
 app.get('/', async (req, res) => {
     const user = req.query["user"];
-
     module1.setUserId(user);
 
     const getUserFromDB = await new Promise(resolve => {
         setTimeout(() => {
             // 2秒かかる処理
             resolve(module1.getUserId());
-        }, 2000);
+        }, 100);
     });
 
     return res.json({
