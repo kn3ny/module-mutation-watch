@@ -5,7 +5,8 @@ module.exports = {
         "node": true,
     },
     "extends": [
-        "eslint:recommended"
+        "eslint:recommended",
+        "prettier",
     ],
     "parserOptions": {
         "ecmaVersion": 12,
