@@ -3,7 +3,12 @@ const app = express();
 const port = 3000;
 
 const Module1 = require("./lib/user");
-const module1 = new Module1();
+const module1 = new Proxy(new Module1(), {
+    set(obj, prop, value) {
+        console.log(`${prop} = ${value}`);
+        return Reflect.set(...arguments);
+    }
+});
 
 app.get('/', async (req, res) => {
     const user = req.query["user"];
