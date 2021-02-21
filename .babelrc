@@ -1,4 +1,4 @@
 {
-    "presets": ["@babel/preset-env"],
-    "plugins": ["./babel/plugin.js"]
+    "plugins": ["./babel/plugin.js"],
+    "exclude": ["./src/lib/proxiedUser.js"]
 }

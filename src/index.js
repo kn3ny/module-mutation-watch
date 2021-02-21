@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const UserModule = require("./lib/proxiedUser");
+const UserModule = require("./lib/user");
 const module1 = new UserModule();
 
 app.get('/', async (req, res) => {

@@ -7,7 +7,10 @@
     "scripts": {
         "prettier:fix": "prettier --write .",
         "eslint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-        "my-babel": "yarn babel ./src/lib/user.js"
+        "start": "node ./src/index.js",
+        "inject-proxy": "babel ./src -d ./dist",
+        "prestart-injected": "yarn inject-proxy",
+        "start-injected": "node ./dist/index.js"
     },
     "devDependencies": {
         "@babel/cli": "^7.12.17",
