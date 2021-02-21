@@ -1,4 +1,4 @@
 {
     "plugins": ["./babel/plugin.js"],
-    "exclude": ["./src/lib/proxiedUser.js"]
+    "exclude": ["./src/lib/proxiedOrder.js"]
 }

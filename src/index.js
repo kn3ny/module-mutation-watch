@@ -1,29 +1,25 @@
 const express = require('express');
 const app = express();
-const port = 3000;
 
-const UserModule = require("./lib/user");
-const module1 = new UserModule();
+const OrderModule = require("./lib/order");
+const order = new OrderModule();
 
 app.get('/', async (req, res) => {
-    const user = req.query["user"];
-    module1.setUserId(user);
+    order.setOrderId(req.query["order"]);
 
-    const getUserFromDB = await new Promise(resolve => {
+    const getOrderFromDb = await new Promise(resolve => {
         setTimeout(() => {
             // 2秒かかる処理
-            resolve(module1.getUserId());
+            resolve(order.getOrderId());
         }, 100);
     });
 
     return res.json({
-        user: getUserFromDB,
+        order: getOrderFromDb,
     });
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-});
+app.listen(3000);
 
 // then run
-// echo -n "a b c" | xargs -P 3 -d ' ' -I {} curl "http://localhost:3000/?user={}"
+// echo -n "a b c" | xargs -P 3 -d ' ' -I {} curl "http://localhost:3000/?order={}"

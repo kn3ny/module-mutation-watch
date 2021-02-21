@@ -1,19 +1,19 @@
-class User {
+class OrderModule {
   constructor() {
-    this.userId = "";
+    this.orderId = "";
   }
 
-  setUserId(value) {
-    this.userId = value;
+  setOrderId(value) {
+    this.orderId = value;
   }
 
-  getUserId() {
-    return this.userId;
+  getOrderId() {
+    return this.orderId;
   }
 
 }
 
-module.exports = new Proxy(User, {
+module.exports = new Proxy(OrderModule, {
   construct(target, args) {
     const ignoreModuleNames = ["Foo", "Bar"];
     const waitUntilEnableHeuristic = 10000;

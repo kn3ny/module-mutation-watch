@@ -1,6 +1,6 @@
-const UserModule = require("./user");
+const OrderModule = require("./order");
 
-const ProxiedUserModule = new Proxy(UserModule, {
+const ProxiedOrderModule = new Proxy(OrderModule, {
     construct(target, args) {
         const ignoreModuleNames = ["Foo", "Bar"];
         const waitUntilEnableHeuristic = 10000;
@@ -27,4 +27,4 @@ const ProxiedUserModule = new Proxy(UserModule, {
     }
 });
 
-module.exports = ProxiedUserModule;
+module.exports = ProxiedOrderModule;
